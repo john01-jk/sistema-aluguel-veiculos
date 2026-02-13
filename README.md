@@ -5,13 +5,11 @@ Este projeto tem como objetivo desenvolver a estrutura inicial de um banco de da
 O sistema será implementado utilizando PostgreSQL e tem como foco a organização das principais entidades e seus relacionamentos.
 ## 🚀 Versão Inicial
 
-Estrutura inicial do projeto
+Estrutura atual do repositório:
 
-
-
-
-
-
+aluguel-carros-app/
+│
+└── README.md
 Versão atual: v0.1.0
 
 Esta versão contém:
