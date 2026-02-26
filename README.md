@@ -26,7 +26,14 @@ erDiagram
         int id
         string nome
         string cpf
+        date data_nascimento
+        string cnh
+        date validade_cnh
         string telefone
+        string email
+        string endereco
+        string status
+        datetime criado_em
     }
 
     VEICULO {
@@ -34,16 +41,87 @@ erDiagram
         string modelo
         string placa
         int ano
-        string status
+        string chassi
+        string cor
+        int categoria_id
+        int status_id
+        decimal valor_diaria
+        int quilometragem
+        datetime criado_em
     }
 
     ALUGUEL {
         int id
-        date data_inicio
-        date data_fim
         int motorista_id
         int veiculo_id
+        int funcionario_id
+        date data_inicio
+        date data_fim
+        decimal valor_total
+        string status
+        int forma_pagamento_id
+        datetime criado_em
+    }
+
+    PAGAMENTO {
+        int id
+        int aluguel_id
+        decimal valor
+        date data_pagamento
+        string status
+        string comprovante_url
+    }
+
+    MANUTENCAO {
+        int id
+        int veiculo_id
+        string descricao
+        date data_inicio
+        date data_fim
+        decimal custo
+        string tipo
+    }
+
+    MULTA {
+        int id
+        int aluguel_id
+        string descricao
+        decimal valor
+        date data_multa
+        string status
+    }
+
+    CATEGORIA_VEICULO {
+        int id
+        string nome
+        string descricao
+    }
+
+    STATUS_VEICULO {
+        int id
+        string nome
+    }
+
+    FORMA_PAGAMENTO {
+        int id
+        string nome
+    }
+
+    FUNCIONARIO {
+        int id
+        string nome
+        string cargo
+        string email
+        string senha
+        string nivel_acesso
     }
 
     MOTORISTA ||--o{ ALUGUEL : realiza
-    VEICULO ||--o{ ALUGUEL : possui
+    VEICULO ||--o{ ALUGUEL : alugado_em
+    VEICULO ||--o{ MANUTENCAO : possui
+    ALUGUEL ||--o{ PAGAMENTO : gera
+    ALUGUEL ||--o{ MULTA : pode_ter
+    CATEGORIA_VEICULO ||--o{ VEICULO : classifica
+    STATUS_VEICULO ||--o{ VEICULO : define
+    FORMA_PAGAMENTO ||--o{ ALUGUEL : utiliza
+    FUNCIONARIO ||--o{ ALUGUEL : registra
