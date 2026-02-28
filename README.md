@@ -124,6 +124,7 @@ erDiagram
         string status
         datetime criado_em
     }
+
     VEICULO {
         int id
         string modelo
@@ -142,13 +143,12 @@ erDiagram
         int id
         int motorista_id
         int veiculo_id
-        int atendentes_id
-        int clientes_id
+        int atendente_id
+        int cliente_id
         date data_inicio
         date data_fim
         decimal valor_total
         string status
-        int forma_pagamento_id
         datetime criado_em
     }
 
@@ -156,21 +156,20 @@ erDiagram
         int id
         int aluguel_id
         int cliente_id
-        int veiculos_id
+        int veiculo_id
+        int periodo_de_contrato_id
         decimal valor
         date data_pagamento
         string status
         string comprovante_url
-
     }
 
-PERIODO DE CONTRATO {
+    PERIODO_DE_CONTRATOS {
         int id
-        date  data_contrato_inicial
-        date  data_contrato_final
+        date data_contrato_inicial
+        date data_contrato_final
         string nome
     }
-
 
     MANUTENCAO {
         int id
@@ -207,7 +206,7 @@ PERIODO DE CONTRATO {
         string nome
     }
 
-    ATENDENTES{
+    ATENDENTES {
         int id
         string nome
         string cpf
@@ -215,22 +214,25 @@ PERIODO DE CONTRATO {
         string senha
         string nivel_acesso
     }
-CLIENTES{
+
+    CLIENTES {
         int id
         string nome
         string cpf
         string email
-       
     }
 
     MOTORISTA ||--o{ ALUGUEL : realiza
     VEICULO ||--o{ ALUGUEL : alugado_em
-    VEICULO ||--o{ MANUTENCAO : possui
+    ATENDENTES ||--o{ ALUGUEL : registra
+    CLIENTES ||--o{ ALUGUEL : vinculado
+
     ALUGUEL ||--o{ CONTRATOS : gera
+    PERIODO_DE_CONTRATOS ||--o{ CONTRATOS : define
+
+    VEICULO ||--o{ MANUTENCAO : possui
     ALUGUEL ||--o{ MULTA : pode_ter
+
     CATEGORIA_VEICULO ||--o{ VEICULO : classifica
     STATUS_VEICULO ||--o{ VEICULO : define
-    FORMA_PAGAMENTO ||--o{ CONTRATOS : gera
-    ATENDENTES  ||--o{ ALUGUEL : registra
-    CLIENTES  ||--o{ ALUGUEL : registra
     
