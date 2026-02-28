@@ -143,7 +143,7 @@ erDiagram
         int id
         int motorista_id
         int veiculo_id
-        int funcionario_id
+        int atendentes_id
         date data_inicio
         date data_fim
         decimal valor_total
@@ -220,4 +220,4 @@ CLIENTES{
     CATEGORIA_VEICULO ||--o{ VEICULO : classifica
     STATUS_VEICULO ||--o{ VEICULO : define
     FORMA_PAGAMENTO ||--o{ ALUGUEL : utiliza
-    FUNCIONARIO ||--o{ ALUGUEL : registra
+    ATENDENTES  ||--o{ ALUGUEL : registra
