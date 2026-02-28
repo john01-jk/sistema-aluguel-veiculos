@@ -196,13 +196,20 @@ erDiagram
         string nome
     }
 
-    FUNCIONARIO {
+    ATENDENTES{
         int id
         string nome
-        string cargo
+        string cpf
         string email
         string senha
         string nivel_acesso
+    }
+CLIENTES{
+        int id
+        string nome
+        string cpf
+        string email
+       
     }
 
     MOTORISTA ||--o{ ALUGUEL : realiza
