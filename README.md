@@ -158,6 +158,7 @@ erDiagram
         int cliente_id
         int veiculo_id
         int periodo_de_contrato_id
+        int forma_pagamento_id
         decimal valor
         date data_pagamento
         string status
@@ -229,10 +230,12 @@ erDiagram
 
     ALUGUEL ||--o{ CONTRATOS : gera
     PERIODO_DE_CONTRATOS ||--o{ CONTRATOS : define
+    FORMA_PAGAMENTO ||--o{ CONTRATOS : utiliza
 
     VEICULO ||--o{ MANUTENCAO : possui
     ALUGUEL ||--o{ MULTA : pode_ter
 
     CATEGORIA_VEICULO ||--o{ VEICULO : classifica
+    STATUS_VEICULO ||--o{ VEICULO : define
     STATUS_VEICULO ||--o{ VEICULO : define
     
