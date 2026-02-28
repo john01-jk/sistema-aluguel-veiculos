@@ -153,14 +153,25 @@ erDiagram
         datetime criado_em
     }
 
-    PAGAMENTO {
+    CONTRATOS {
         int id
         int aluguel_id
+        int cliente_id
+        int veiculos_id
         decimal valor
         date data_pagamento
         string status
         string comprovante_url
+
     }
+
+PERIODO DE CONTRATO {
+        int id
+        date  data_contrato_inicial
+        date  data_contrato_final
+        string nome
+    }
+
 
     MANUTENCAO {
         int id
@@ -216,10 +227,11 @@ CLIENTES{
     MOTORISTA ||--o{ ALUGUEL : realiza
     VEICULO ||--o{ ALUGUEL : alugado_em
     VEICULO ||--o{ MANUTENCAO : possui
-    ALUGUEL ||--o{ PAGAMENTO : gera
+    ALUGUEL ||--o{ CONTRATOS : gera
     ALUGUEL ||--o{ MULTA : pode_ter
     CATEGORIA_VEICULO ||--o{ VEICULO : classifica
     STATUS_VEICULO ||--o{ VEICULO : define
-    FORMA_PAGAMENTO ||--o{ ALUGUEL : utiliza
+    FORMA_PAGAMENTO ||--o{ CONTRATOS : gera
     ATENDENTES  ||--o{ ALUGUEL : registra
     CLIENTES  ||--o{ ALUGUEL : registra
+    CONTRATOS  ||--o{ PERIODO DE CONTRATO : registra
