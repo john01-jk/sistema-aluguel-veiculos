@@ -124,7 +124,6 @@ erDiagram
         string status
         datetime criado_em
     }
-
     VEICULO {
         int id
         string modelo
