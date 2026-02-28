@@ -233,4 +233,4 @@ CLIENTES{
     FORMA_PAGAMENTO ||--o{ CONTRATOS : gera
     ATENDENTES  ||--o{ ALUGUEL : registra
     CLIENTES  ||--o{ ALUGUEL : registra
-    CONTRATOS  ||--o{ PERIODO DE CONTRATO : registra
+    
