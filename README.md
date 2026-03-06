@@ -109,7 +109,8 @@ Sistema SaaS para locadoras
  ## 🗄 Modelo de Dados
 
 ```mermaid
-erDiagram
+
+ erDiagram
 
     MOTORISTA {
         int id
@@ -147,29 +148,16 @@ erDiagram
         int cliente_id
         date data_inicio
         date data_fim
-        decimal valor_total
-        string status
-        datetime criado_em
-    }
-
-    CONTRATOS {
-        int id
-        int aluguel_id
-        int cliente_id
-        int veiculo_id
-        int periodo_de_contrato_id
-        int forma_pagamento_id
-        decimal valor
-        date data_pagamento
-        string status
-        string comprovante_url
-    }
-
-    PERIODO_DE_CONTRATOS {
-        int id
         date data_contrato_inicial
         date data_contrato_final
-        string nome
+        date data_pagamento
+        string nome_periodo_contrato
+        string forma_pagamento
+        decimal valor_total
+        decimal valor_contrato
+        string status
+        string comprovante_url
+        datetime criado_em
     }
 
     MANUTENCAO {
@@ -202,11 +190,6 @@ erDiagram
         string nome
     }
 
-    FORMA_PAGAMENTO {
-        int id
-        string nome
-    }
-
     ATENDENTES {
         int id
         string nome
@@ -227,15 +210,9 @@ erDiagram
     VEICULO ||--o{ ALUGUEL : alugado_em
     ATENDENTES ||--o{ ALUGUEL : registra
     CLIENTES ||--o{ ALUGUEL : vinculado
-
-    ALUGUEL ||--o{ CONTRATOS : gera
-    PERIODO_DE_CONTRATOS ||--o{ CONTRATOS : define
-    FORMA_PAGAMENTO ||--o{ CONTRATOS : utiliza
-
+    
     VEICULO ||--o{ MANUTENCAO : possui
     ALUGUEL ||--o{ MULTA : pode_ter
 
     CATEGORIA_VEICULO ||--o{ VEICULO : classifica
     STATUS_VEICULO ||--o{ VEICULO : define
-    STATUS_VEICULO ||--o{ VEICULO : define
-    
