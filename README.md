@@ -1,116 +1,23 @@
-# sistema-aluguel-veiculos ## 📌 Apresentação do Projeto
+# 🚗 Sistema de Locação de Veículos
 
-🚗 Aluguel de Carros para Motoristas de Aplicativo
+## Apresentação do Projeto
 
-Sistema de banco de dados relacional desenvolvido para gerenciar uma plataforma de aluguel de veículos voltada para motoristas de aplicativos.
+### Tema
+Sistema de gerenciamento para locadora de veículos, permitindo o controle completo de motoristas, veículos, aluguéis, manutenções e multas.
 
-O projeto tem como objetivo estruturar, modelar e organizar as entidades principais de um sistema real de locação, utilizando PostgreSQL como SGBD.
+### Objetivo Geral
+Desenvolver um banco de dados relacional para gerenciar as operações de uma locadora de veículos, incluindo cadastro de motoristas, controle de frota, registro de aluguéis, manutenções e multas, garantindo a integridade e consistência dos dados.
 
-📌 Objetivo do Projeto
+### Público-Alvo
+- Administradores de locadoras de veículos
+- Atendentes e operadores do sistema
+- Gerentes de frota
+- Clientes que alugam veículos
 
-Desenvolver a base estrutural de um banco de dados que permita:
-
-Cadastro e gerenciamento de motoristas
-
-Controle completo de veículos
-
-Gestão de aluguéis
-
-Controle de pagamentos
-
-Registro de multas e manutenções
-
-Organização de funcionários do sistema
-
-Este projeto representa a camada inicial de dados para um futuro aplicativo completo.
-
-🛠 Tecnologias Utilizadas
-
-🐘 PostgreSQL
-
-🧩 Modelagem Relacional
-
-📊 Diagrama ER com Mermaid
-
-📂 Versionamento com Git
-
-📦 Estrutura do Repositório
-aluguel-carros-app/
-│
-├── README.md
-└── database/
-    └── modelo_er.mmd
-
-📌 Versão atual: v0.1.0
-
-🗄 Modelo de Dados
-
-O banco de dados foi modelado utilizando boas práticas de normalização, garantindo:
-
-Integridade referencial
-
-Escalabilidade
-
-Organização lógica das entidades
-
-Preparação para futura implementação de API
-
-📊 Diagrama Entidade-Relacionamento (ER)
-🧠 Principais Entidades
-👤 MOTORISTA
-
-Armazena informações pessoais e documentação do motorista.
-
-🚘 VEICULO
-
-Contém dados técnicos e operacionais dos veículos disponíveis para aluguel.
-
-📄 ALUGUEL
-
-Registra as transações de locação entre motorista e veículo.
-
-💳 PAGAMENTO
-
-Controla os pagamentos vinculados a cada aluguel.
-
-🔧 MANUTENCAO
-
-Permite registrar custos e histórico de manutenção dos veículos.
-
-📈 Próximas Implementações
-
- Scripts SQL completos (CREATE TABLE)
-
- Seeds para dados de teste
-
- Controle de autenticação de funcionários
-
- API REST integrada
-
- Sistema de versionamento do banco
-
- Deploy em ambiente cloud
-
-🎯 Visão de Futuro
-
-Este projeto poderá evoluir para:
-
-Backend completo (Node.js / Java / Python)
-
-Aplicativo mobile
-
-Painel administrativo
-
-Sistema SaaS para locadoras
-
-📚 Status do Projeto
-
-🚧 Em desenvolvimento — Fase inicial de modelagem de dados.
- ## 🗄 Modelo de Dados
+## 📊 Modelo de Dados Relacional
 
 ```mermaid
-
- erDiagram
+erDiagram
 
     MOTORISTA {
         int id
