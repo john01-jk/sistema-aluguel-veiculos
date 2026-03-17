@@ -1,6 +1,6 @@
 # 🚗 Sistema de Locação de Veículos
 
-## Apresentação do Projeto
+## 📋 Apresentação do Projeto
 
 ### Tema
 Sistema de gerenciamento para locadora de veículos, permitindo o controle completo de motoristas, veículos, aluguéis, manutenções e multas.
@@ -14,26 +14,7 @@ Desenvolver um banco de dados relacional para gerenciar as operações de uma lo
 - Gerentes de frota
 - Clientes que alugam veículos
 
-
-### 📝 Funcionalidades Implementadas
-
-✅ Cadastro completo de motoristas
-
-✅ Controle de frota de veículos
-
-✅ Gerenciamento de aluguéis
-
-✅ Registro de manutenções
-
-✅ Controle de multas
-
-✅ Categorias e status de veículos
-
-✅ Views para consultas complexas
-
-✅ Procedures para cálculos automáticos
-
-✅ Índices para otimização
+---
 
 ## 📊 Modelo de Dados Relacional
 
